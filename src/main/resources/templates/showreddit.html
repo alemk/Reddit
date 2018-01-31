@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th=" www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+
+<a href="/" >Showing detail reddit </a><br/>
+User Name: <span th:text="${reddit.username}"></span><BR/>
+Title: <span th:text="${reddit.title}"></span><BR/>
+Subject: <span th:text="${reddit.subject}"></span><BR/>
+<a th:href="@{/delete/{id}(id=${reddit.id})}" >Delete this Address book</a>
+
+</body>
+</html>
