@@ -1,20 +1,17 @@
 package com.example.demo;
 
-import org.springframework.boot.autoconfigure.web.ResourceProperties;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
-import java.security.PublicKey;
 
 @Entity
 public class Reddit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long userid;
+    private long id;
 
     @NotNull
     private String username;
@@ -22,15 +19,19 @@ public class Reddit {
     private String title;
     @NotNull
     private String subject;
+
+   
+
     public Reddit(){
 
     }
-    public long getUserid() {
-        return userid;
+
+    public long getId() {
+        return id;
     }
 
-    public void setUserid(long userid) {
-        this.userid = userid;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getUsername() {
