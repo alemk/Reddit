@@ -9,22 +9,16 @@
 <table>
 
     <tr th:each="reddit : ${reddits}">
+        <td>
 
-        <!--<td th:text="${reddit.username}"></td>
-        <td th:text="${reddit.title}"></td>
-        <td> <a th:href="${reddit.subject}" target="_blank"><span th:text="${reddit.subject}"/></a> </td>
--->
-
-        <label>Title: </label><span><a th:href="${reddit.subject}" target="_blank" th:inline="text">
+       <span><a th:href="${reddit.subject}" target="_blank" th:inline="text">
                                <span th:text="${reddit.title}"/></a></span><BR/>
         <label>Submitted by:</label>  <span th:text="${reddit.username}"></span><BR/>
-        <span th:text="${reddit.date}"></span>
-
-        <td>
-            <!--<a th:href="@{/update/{id}(id=${reddit.id})}">Update</a>-->
-            <a th:href="@{/detail/{id}(id=${reddit.id})}">Detail</a>
-            <a th:href="@{/delete/{id}(id=${reddit.id})}">Delete post</a>
+        <span th:text="${reddit.date}"></span><br/>
+            <a th:href="@{/detail/{id}(id=${reddit.id})}">Detail</a> |
+            <a th:href="@{/delete/{id}(id=${reddit.id})}">Delete post</a><br/><br/>
         </td>
+
     </tr>
 </table>
 </body>
