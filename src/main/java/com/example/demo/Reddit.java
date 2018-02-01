@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import java.security.PublicKey;
 
 @Entity
 public class Reddit {
@@ -16,12 +17,14 @@ public class Reddit {
     private long userid;
 
     @NotNull
-    public String username;
+    private String username;
     @NotNull
-    public String title;
+    private String title;
     @NotNull
-    public String subject;
+    private String subject;
+    public Reddit(){
 
+    }
     public long getUserid() {
         return userid;
     }
