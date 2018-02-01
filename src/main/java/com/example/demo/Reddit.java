@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 @Entity
 public class Reddit {
@@ -19,8 +20,15 @@ public class Reddit {
     private String title;
     @NotNull
     private String subject;
+    private Date date;
 
-   
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     public Reddit(){
 

@@ -15,6 +15,7 @@
         <label>Title: </label> <input type="text" th:field="*{title}"/><br/>
     <span th:if="${#fields.hasErrors('subject')}" th:errors="*{subject}"></span>
         <label>Subject:</label> <input type="url" th:field="*{subject}"/><br/>
+
         <input type="submit" name="submit"/>
 </form>
 </body>

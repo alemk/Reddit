@@ -7,10 +7,17 @@
 <body>
 
 
-<a href="/" >Showing detail reddit </a><br/>
-    <label>Name:</label>  <span th:text="${reddit.username}"></span><BR/>
+<a href="/" >Home </a><br/>
+    <!--<label>Name:</label>  <span th:text="${reddit.username}"></span><BR/>
     <label>Title:</label> <span th:text="${reddit.title}"></span><BR/>
-    <label>Subject:</label> <span th:text="${reddit.subject}"></span><BR/>
+<label>Subject:</label><span><a th:href="${reddit.subject}" target="_blank" th:inline="text"><span th:text="${reddit.subject}"/></a></span><BR/>
+-->
+
+<label>Title: </label><span><a th:href="${reddit.subject}" target="_blank" th:inline="text">
+    <span th:text="${reddit.title}"/></a></span><BR/>
+<label>Submitted by:</label>  <span th:text="${reddit.username}"></span><BR/>
+<span th:text="${reddit.date}"></span>
+
 <a th:href="@{/delete/{id}(id=${reddit.id})}" >Delete this post</a>
 </body>
 </html>

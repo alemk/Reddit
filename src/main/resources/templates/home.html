@@ -2,26 +2,28 @@
 <html lang="en" xmlns:th=" www.thymeleaf.com">
 <head>
     <meta charset="UTF-8"/>
-    <title>Address Book List</title>
+    <title>Home of the free people</title>
 </head>
 <body>
-<a href="/add">add Post </a><br/>
+<a href="/add">Add Post </a><br/>
 <table>
-    <tr>
-        <th>User Name</th>
-        <th>Title</th>
-        <th>Subject</th>
-    </tr>
-    <tr th:each="eachreddit : ${reddits}">
 
-        <td th:text="${eachreddit.username}"></td>
-        <td th:text="${eachreddit.title}"></td>
-        <td th:text="${eachreddit.subject}"></td>
+    <tr th:each="reddit : ${reddits}">
+
+        <!--<td th:text="${reddit.username}"></td>
+        <td th:text="${reddit.title}"></td>
+        <td> <a th:href="${reddit.subject}" target="_blank"><span th:text="${reddit.subject}"/></a> </td>
+-->
+
+        <label>Title: </label><span><a th:href="${reddit.subject}" target="_blank" th:inline="text">
+                               <span th:text="${reddit.title}"/></a></span><BR/>
+        <label>Submitted by:</label>  <span th:text="${reddit.username}"></span><BR/>
+        <span th:text="${reddit.date}"></span>
 
         <td>
-            <a th:href="@{/update/{id}(id=${eachreddit.id})}">Update</a>
-            <a th:href="@{/detail/{id}(id=${eachreddit.id})}">Detail</a>
-            <a th:href="@{/delete/{id}(id=${eachreddit.id})}">Delete</a>
+            <a th:href="@{/update/{id}(id=${reddit.id})}">Update</a>
+            <a th:href="@{/detail/{id}(id=${reddit.id})}">Detail</a>
+            <a th:href="@{/delete/{id}(id=${reddit.id})}">Delete</a>
         </td>
     </tr>
 </table>
