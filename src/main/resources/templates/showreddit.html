@@ -16,8 +16,8 @@
 <label>Title: </label><span><a th:href="${reddit.subject}" target="_blank" th:inline="text">
     <span th:text="${reddit.title}"/></a></span><BR/>
 <label>Submitted by:</label>  <span th:text="${reddit.username}"></span><BR/>
-<span th:text="${reddit.date}"></span>
+<span th:text="${reddit.date}"></span><br/>
 
-<a th:href="@{/delete/{id}(id=${reddit.id})}" >Delete this post</a>
+<a th:href="@{/delete/{id}(id=${reddit.id})}" >Delete  post</a>
 </body>
 </html>
